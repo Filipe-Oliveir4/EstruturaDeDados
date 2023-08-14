@@ -2,7 +2,7 @@ package segundaLista;
 
 import java.util.Scanner;
 
-public class Questão1 {
+public class Questao1 {
 
 	public static void main(String[] args) {
 		//Faça um programa que pergunte um número ao usuário e depois mostre a seguinte informação da tabuada na tela:
