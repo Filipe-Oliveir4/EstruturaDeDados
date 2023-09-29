@@ -1,4 +1,4 @@
-package lista_encadeada;
+package desafioListaEncadeada;
 
 public class No {
 	

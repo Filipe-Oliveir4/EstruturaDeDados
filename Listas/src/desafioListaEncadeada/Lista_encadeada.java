@@ -1,4 +1,4 @@
-package lista_encadeada;
+package desafioListaEncadeada;
 
 public class Lista_encadeada {
 	private No inicio;
@@ -15,7 +15,7 @@ public class Lista_encadeada {
 
 	public void setInicio(No inicio) {
 		this.inicio = inicio;
-	}
+	}	
 	
 	
 	public No getUltimo() {
