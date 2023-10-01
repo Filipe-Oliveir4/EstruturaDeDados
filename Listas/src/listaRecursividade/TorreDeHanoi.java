@@ -3,13 +3,13 @@ package listaRecursividade;
 public class TorreDeHanoi {
 
 	public static void main(String[] args) {
-		//TorreHanoi(3, "inicio", "meio", "fim");
+		TorreHanoi(3, "inicio", "meio", "fim");
 		Torres torre = new Torres(3);
 		TorreHanoiObj(torre, torre.torreA.length, torre.torreA, torre.torreB, torre.torreC);
 
 	}
 	public static void TorreHanoi(int disco,String inicio, String meio, String fim) {
-		if(disco>=0) {
+		if(disco>=1) {
 			 TorreHanoi(disco-1, inicio, fim, meio);
 			 System.out.println("O disco "+ disco +" moveu de "+ inicio +" para " + fim);
 			 TorreHanoi(disco-1, meio, inicio, fim);
