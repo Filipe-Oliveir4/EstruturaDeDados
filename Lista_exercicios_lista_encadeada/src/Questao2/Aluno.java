@@ -1,8 +1,8 @@
-package Questao1;
+package Questao2;
 
 public class Aluno {
-    String matricula;
-    String nome;
+    private String matricula;
+    private String nome;
 
     public Aluno(String matricula, String nome) {
         this.matricula = matricula;
@@ -23,5 +23,10 @@ public class Aluno {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    @Override
+    public String toString() {
+        return matricula+"\n"+nome+"\n";
     }
 }
