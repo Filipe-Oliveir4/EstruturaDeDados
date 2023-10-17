@@ -88,6 +88,8 @@ public class ListaQ2 {
 
         }
     }
+
+
     public void pesquisar(String nome){
        this.atual=this.primeiro;
        while (atual!=null){
