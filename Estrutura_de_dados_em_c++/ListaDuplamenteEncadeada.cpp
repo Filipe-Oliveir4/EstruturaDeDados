@@ -7,26 +7,18 @@ using namespace std;
         No *proximo;
         No *anterior;
     };
-int main(){
-   
+int main(){   
     int opcao;
     int num;
     No *inicio=NULL;
-    inicio->anterior=NULL;
-    inicio->proximo=NULL;
     No *fim=NULL;
-    fim->anterior=NULL;
-    fim->proximo=NULL;
     No *aux =NULL;
-    aux->anterior=NULL;
-    aux->proximo=NULL;
     do{
         cout<<"Menu de operações\n";
-        cout<<"1 - Add no inicio\n";
-        cout<<"2 - Add no fim\n";
-        cout<<"3 - remover do inicio\n";
+        cout<<"1 - Add no fim\n";
+        cout<<"2 - imprimir do inicio\n";
+        cout<<"3 - imprimir do fim\n";
         cout<<"4 - remover do fim\n";
-        cout<<"5 - listar\n";
         cin>>opcao;
         switch (opcao)
         {
@@ -34,75 +26,56 @@ int main(){
             No *novoNo = new No();
             cout<<"Qual o num para add?\n";
             cin>>novoNo->num;
-            if (inicio==NULL)   
-            {
-                inicio = fim = novoNo;
-                fim->proximo=NULL;
-            }else{
-                novoNo->proximo=inicio;
-                inicio->anterior=novoNo;
-                inicio=novoNo;
-            }
-            cout<<"Num inserido\n";            
-            }break;
-        case 2:{
-            No *novoNo = new No();
-            cout<<"Qual o num para add?\n";
-            cin>>novoNo->num;
             if(inicio==NULL){
                 inicio = fim = novoNo;
                 fim->proximo=NULL;
+                fim->anterior=NULL;
             }else{
                 fim->proximo=novoNo;
+                novoNo->anterior=fim;
                 fim=novoNo;
             }
             cout<<"Num inserido\n";
-            }break;
-        case 3:{
-            if(inicio==NULL){
-                cout<<"Lista Vazia";
-            }else{
-                aux=inicio;
-                inicio=inicio->proximo;
-                cout<<aux;
+        }break;
+        case 2:{
+            aux=inicio;
+            cout<<"NULL <-> ";
+            while (aux!=NULL)
+            {
+                cout<<aux->num<<" <-> ";
+                aux=aux->proximo;
             }
+            cout<<"NULL";
+        }break;
+        case 3:{
+            aux=fim;
+            cout<<"NULL <-> ";
+            while (aux!=NULL)           
+            {
+                cout<<aux->num<<" <-> ";
+                aux=aux->anterior;
+            }
+            cout<<"NULL";
             }break;
         case 4:{
             if(inicio==NULL){
                 cout<<"Lista Vazia";
             }else if(inicio==fim){
-                inicio=fim=NULL;
+                delete(inicio);
+                inicio=NULL;
             }else{
-                No *anterior=NULL;
-                aux=inicio;
-                do
-                {
-                    anterior=aux;
-                    aux=aux->proximo;
-                } while (aux!=fim);
-                anterior->proximo=NULL;
-                fim=anterior;
-                //delete(aux);
+                aux=fim;
+                fim=fim->anterior;
+                fim->proximo=NULL;
+                delete(aux);
                 aux=NULL;
             }
-        }break;
-        case 5:{
-            aux=inicio;
-            if(aux!=NULL){
-                do
-            {
-               cout<<aux->num<<"->";
-               aux=aux->proximo;
-            } while (aux!=NULL);
-            cout<<"NULL"<<endl;
-            }
-            aux=inicio;
         }break;
         default:
             break;
         }
-        cout<<&inicio<<" "<<&fim;
+        //cout<<&inicio<<" "<<&fim;
         cout<<"\n\n\n\n\n\n\n";
     }while (opcao!=0);    
     return 0; 
-}
+}   
