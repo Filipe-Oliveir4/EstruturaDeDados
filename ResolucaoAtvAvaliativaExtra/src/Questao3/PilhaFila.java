@@ -1,9 +1,6 @@
 package Questao3;
 
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 
 public class PilhaFila {
     private Queue<Integer> fila = new LinkedList<Integer>();
@@ -14,7 +11,7 @@ public class PilhaFila {
     public void inseriFila(int num){
         if (qtdNum<10){
             fila.offer(num);
-            System.out.println("Numero adicionado");
+            System.out.println("Numero adicionado\n");
         }else{
             System.out.println("Fila cheia");
         }
@@ -27,7 +24,7 @@ public class PilhaFila {
             while (it.hasNext()){
                 System.out.print(it.next()+" <- ");
             }
-            System.out.println("Fim");
+            System.out.println("Fim\n\n");
         }else{
             System.out.println("Fila vazia");
         }
@@ -36,14 +33,10 @@ public class PilhaFila {
     public void tranferirFilaPilha(){
         pilha.clear();
         Iterator<Integer> it = fila.iterator();
-        Stack<Integer> pilhaAux = new Stack<Integer>();
         if(it.hasNext()){
-            System.out.println("Add a pilha");
+            System.out.println("Add a pilha\n");
             while (it.hasNext()){
-                pilhaAux.add(it.next());
-            }
-            while (!pilhaAux.empty()){
-                pilha.add(pilhaAux.pop());
+                pilha.add(it.next());
             }
         }else{
             System.out.println("Fila vazia");
@@ -54,12 +47,13 @@ public class PilhaFila {
         if (pilha.empty()){
             System.out.println("Pilha vazia");
         }else{
-            Iterator<Integer> it = pilha.iterator();
+            List<Integer> list = pilha.reversed();
+            Iterator<Integer> it = pilha.reversed().iterator();
             System.out.println("Topo");
             while (it.hasNext()){
                 System.out.println(it.next());
             }
-            System.out.println("Base");
+            System.out.println("Base\n");
         }
     }
 }
