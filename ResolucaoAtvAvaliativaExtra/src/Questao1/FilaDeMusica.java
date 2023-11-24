@@ -19,8 +19,7 @@ public class FilaDeMusica {
         if(fila.isEmpty()){
             System.out.println("Lista vazia\n");
         }else {
-            System.out.println("Tocando: " + fila.peek()+"\n");
-            fila.remove();
+            System.out.println("Tocando: " + fila.poll()+"\n");
         }
     }
 
