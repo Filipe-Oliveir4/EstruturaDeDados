@@ -30,7 +30,7 @@ public class TesteQ1 {
             switch(opcao){
                 case 1:{
                     String nomeEntrevistado;
-                    System.out.println("Insira o nome da musica");
+                    System.out.println("Insira o nome");
                     ent.nextLine();
                     try {
                         nomeEntrevistado = ent.nextLine();
