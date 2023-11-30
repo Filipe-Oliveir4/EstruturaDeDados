@@ -41,10 +41,6 @@ public class Arvore {
         }
     }
 
-    private int balanco(){
-        return balanco(raiz.getEsquerda()) - balanco(raiz.getDireita());
-    }
-
     private int balanco(No no){
         if (no==null){
             return 0;
